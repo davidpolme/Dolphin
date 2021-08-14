@@ -1,6 +1,9 @@
 package handlers
 
 import (
+	"Dolphin/middlewares"
+	"Dolphin/routers"
+
 	"log"
 	"net/http"
 	"os"
@@ -12,6 +15,8 @@ import (
 /* Handlers is a function that set the port 8080, the handler and enable the server to listen */
 func Handlers() {
 	router := mux.NewRouter()
+
+	router.HandleFunc("/registro", middlewares.CheckDB(routers.Register)).Methods("POST")
 
 	PORT := os.Getenv("PORT")
 	if PORT == "" {
