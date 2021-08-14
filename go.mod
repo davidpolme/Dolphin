@@ -1,4 +1,4 @@
-module github.com/davidpolme/Dolphin
+module Dolphin
 
 go 1.16
 
