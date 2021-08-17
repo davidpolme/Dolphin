@@ -12,10 +12,10 @@ import (
 func InsertRegister(u models.User) (string, bool, error) {
 
 	//ctx context
-	ctx, cancer := context.WithTimeout(context.Background(), 15*time.Second)
-	defer cancer()
+	ctx, cancel := context.WithTimeout(context.Background(), 15*time.Second)
+	defer cancel()
 
-	db := MongoCN.Database("dolphin")
+	db := MongoCN.Database("DolphinDB") // nombre de la coleccion de la base de datos
 	col := db.Collection("users")
 
 	/* Funcion que encripta la contraseña */
