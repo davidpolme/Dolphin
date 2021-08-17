@@ -9,7 +9,7 @@ import (
 )
 
 /* InsertRegister is the last stop with the DB to insert the user data */
-func InsertRegister(u models.Usuario) (string, bool, error) {
+func InsertRegister(u models.User) (string, bool, error) {
 
 	//ctx context
 	ctx, cancer := context.WithTimeout(context.Background(), 15*time.Second)
